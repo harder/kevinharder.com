@@ -25,18 +25,54 @@ nav {
   background-color: #A0D9D9; /* Sky Blue */
   padding: 10px 0;
   font-family: 'Space Mono', monospace;
-  border-bottom: 4px solid #E3A378; /* Add a decorative border */
+  border-bottom: 4px solid #E3A378;
 }
 
 .navigation {
   list-style: none;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 0;
 }
 
 .navigation li {
   margin: 0 15px;
+}
+
+/* Responsive navigation for mobile */
+@media (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navigation li {
+    margin: 10px 0;
+  }
+}
+
+/* Add a hamburger icon for smaller screens */
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .navigation.open {
+    display: block;
+  }
 }
 
 .navigation a {
