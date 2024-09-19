@@ -48,11 +48,10 @@ nav {
   }
 
   .navigation li {
-    margin: 10px 0;
+    margin: 12px 0;
   }
 }
 
-/* Add a hamburger icon for smaller screens */
 .hamburger {
   display: none;
 }
@@ -184,7 +183,7 @@ nav {
   .story-content {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: left;
   }
 
   .image-container {
@@ -193,7 +192,7 @@ nav {
   }
 
   .text-content p {
-    text-align: center;
+    text-align: left;
   }
 }
 
