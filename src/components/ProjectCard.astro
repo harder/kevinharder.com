@@ -1,0 +1,28 @@
+---
+import type { Project } from '../content/projects';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<article class="project-card">
+  <h3>{project.title}</h3>
+  <p><strong>Problem:</strong> {project.problem}</p>
+  <p><strong>Approach:</strong> {project.approach}</p>
+  <p><strong>Impact:</strong> {project.impact}</p>
+  <div class="badge-row" aria-label="Tech stack">
+    {project.stack.map((stackItem) => (
+      <span class="mission-badge">{stackItem}</span>
+    ))}
+  </div>
+  <div class="project-links">
+    {project.links.map((link) => (
+      <a href={link.href} target="_blank" rel="noopener noreferrer">
+        {link.label}
+      </a>
+    ))}
+  </div>
+</article>

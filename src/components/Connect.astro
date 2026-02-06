@@ -1,0 +1,17 @@
+---
+import { profile } from '../content/profile';
+---
+
+<div class="connect-grid" role="list" aria-label="Social links">
+  <button class="connect-card connect-copy-card reveal" role="listitem" type="button" data-copy-value={profile.email}>
+    <img src="/images/icon-email-at.svg" alt="" loading="lazy" />
+    <span>Copy Email</span>
+  </button>
+
+  {profile.social.map((item) => (
+    <a class="connect-card reveal" role="listitem" href={item.href} target="_blank" rel="noopener noreferrer">
+      <img src={item.icon} alt="" loading="lazy" />
+      <span>{item.label}</span>
+    </a>
+  ))}
+</div>

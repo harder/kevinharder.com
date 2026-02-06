@@ -1,0 +1,25 @@
+---
+import { profile } from '../content/profile';
+---
+
+<section id="home" class="hero reveal" data-section>
+  <div class="hero-copy">
+    <p class="hero-kicker">{profile.location}</p>
+    <h1>{profile.name}</h1>
+    <p class="hero-tagline">{profile.tagline}</p>
+    <ul class="tldr-strip" aria-label="TLDR highlights">
+      {profile.tldr.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+    <div class="hero-actions">
+      <a class="button" href="#career">Open career timeline</a>
+      <a class="button button-ghost" href="#connect">Connect with me</a>
+    </div>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <a href="https://www.jpl.nasa.gov/images/the-grand-tour-jpl-travel-poster" target="_blank" rel="noopener noreferrer">
+      <img src="/images/grand_tour.jpg" alt="The Grand Tour NASA JPL poster" loading="eager" />
+    </a>
+  </div>
+</section>

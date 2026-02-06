@@ -1,0 +1,28 @@
+{
+  "name": "kevinharder-com",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "@astrojs/preact": "^4.0.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "preact": "^10.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0",
+    "prettier-plugin-astro": "^0.14.0",
+    "typescript": "^5.0.0"
+  }
+}

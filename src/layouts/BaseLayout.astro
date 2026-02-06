@@ -1,0 +1,144 @@
+---
+import '../styles/global.css';
+import { profile } from '../content/profile';
+import { sections } from '../content/sections';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const { title, description, canonical, ogImage } = Astro.props;
+
+const pageTitle = profile.name;
+const metaDescription = description ?? profile.description;
+const site = Astro.site ?? new URL('https://kevinharder.com');
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, site).toString();
+const socialImage = new URL(ogImage ?? '/images/profile3.jpg', site).toString();
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.name,
+  jobTitle: profile.title,
+  description: profile.description,
+  email: `mailto:${profile.email}`,
+  url: site.toString(),
+  homeLocation: {
+    '@type': 'Place',
+    name: profile.location
+  },
+  sameAs: profile.social.map((item) => item.href)
+};
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={metaDescription} />
+    <meta name="author" content={profile.name} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/favicon.ico" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content={profile.name} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:site" content="@kevinharder" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script is:inline>
+      (() => {
+        const storageKey = 'theme-preference';
+        const stored = localStorage.getItem(storageKey);
+        const choice = stored === 'light' || stored === 'dark' || stored === 'system' ? stored : 'system';
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const resolved = choice === 'system' ? (prefersDark ? 'dark' : 'light') : choice;
+        document.documentElement.dataset.theme = resolved;
+        document.documentElement.dataset.themeChoice = choice;
+      })();
+    </script>
+
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)}></script>
+
+    <script is:inline>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        const f = d.getElementsByTagName(s)[0];
+        const j = d.createElement(s);
+        const dl = l !== 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-P5X4B56J');
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-P5X4B56J"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
+
+    <canvas id="starfield-canvas" aria-hidden="true"></canvas>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="nav-shell">
+        <a href="#home" class="wordmark">Kevin Harder</a>
+        <nav aria-label="Primary">
+          <ul class="site-nav">
+            {sections.map((section) => (
+              <li>
+                <a href={`#${section.id}`} data-nav-link>
+                  {section.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <div class="theme-toggle" role="group" aria-label="Theme">
+            <button type="button" data-theme-choice="system">System</button>
+            <button type="button" data-theme-choice="dark">Dark</button>
+            <button type="button" data-theme-choice="light">Light</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <slot name="after-main" />
+
+    <div id="site-toast" role="status" aria-live="polite"></div>
+
+    <script type="module" src="/scripts/site-enhancements.js"></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+---
+import { careerRoles } from '../content/career';
+---
+
+<div class="career-timeline" aria-label="Career trajectory timeline">
+  {careerRoles.map((role) => (
+    <details class="career-role reveal" open={role.openByDefault}>
+      <summary>
+        <div class="career-summary-row">
+          <div class="career-logos" aria-hidden="true">
+            {role.logos.map((logo) => (
+              <img src={logo} alt="" loading="lazy" />
+            ))}
+          </div>
+          <div>
+            <h3>{role.company}</h3>
+            <p class="career-meta">{role.title} | {role.timeframe}</p>
+          </div>
+        </div>
+      </summary>
+      <div class="career-content">
+        <p>{role.summary}</p>
+        {role.companyUrl && (
+          <p>
+            <a href={role.companyUrl} target="_blank" rel="noopener noreferrer">
+              {role.companyUrlTitle}
+            </a>
+          </p>
+        )}
+        <ul>
+          {role.highlights.map((highlight) => (
+            <li>{highlight}</li>
+          ))}
+        </ul>
+      </div>
+    </details>
+  ))}
+</div>
