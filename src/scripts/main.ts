@@ -16,7 +16,7 @@ function getStoredTheme(): ThemeChoice {
     return stored;
   }
 
-  return 'system';
+  return 'dark';
 }
 
 function getResolvedTheme(choice: ThemeChoice): 'dark' | 'light' {

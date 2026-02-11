@@ -27,7 +27,7 @@ export const profile = {
       icon: '/images/icon-github.png'
     },
     {
-      label: 'X [Twitter]',
+      label: 'X',
       href: 'https://twitter.com/KevinHarder',
       icon: '/images/icon-twitter.png'
     },

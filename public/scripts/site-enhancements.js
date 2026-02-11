@@ -5,7 +5,7 @@ function getStoredTheme() {
   if (stored === 'system' || stored === 'dark' || stored === 'light') {
     return stored;
   }
-  return 'system';
+  return 'dark';
 }
 
 function getResolvedTheme(choice) {

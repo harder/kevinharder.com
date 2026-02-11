@@ -183,6 +183,11 @@ main {
   box-shadow: var(--shadow);
 }
 
+.hero h1 {
+  color: var(--text);
+  text-shadow: 0 2px 12px rgba(3, 8, 20, 0.5);
+}
+
 .hero-kicker {
   margin-bottom: 0.5rem;
   color: var(--accent-2);
@@ -198,6 +203,28 @@ main {
   color: color-mix(in srgb, var(--text) 88%, var(--accent-2));
   font-size: var(--step-1);
   max-width: 43ch;
+}
+
+html[data-theme='light'] .hero {
+  background:
+    linear-gradient(135deg, rgba(7, 18, 37, 0.82), rgba(14, 30, 59, 0.72)),
+    url('/images/hero-background.jpg') center / cover no-repeat;
+}
+
+html[data-theme='light'] .hero-kicker {
+  color: #86dcff;
+}
+
+html[data-theme='light'] .hero h1,
+html[data-theme='light'] .hero-tagline,
+html[data-theme='light'] .hero .button-ghost {
+  color: #f3f8ff;
+}
+
+html[data-theme='light'] .tldr-strip li {
+  color: #f3f8ff;
+  border-color: rgba(243, 248, 255, 0.5);
+  background: rgba(8, 20, 38, 0.34);
 }
 
 .tldr-strip {
