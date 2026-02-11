@@ -3,20 +3,26 @@ import { familyMembers } from '../content/family';
 ---
 
 <div class="family-grid" role="list" aria-label="Family members">
-  {familyMembers.map((member) => (
-    <article class="family-card reveal" role="listitem">
-      <div class="family-card-body">
-        <h3>{member.name}</h3>
-        <img src={member.image} alt={`Profile icon for ${member.name}`} loading="lazy" />
-        <p>{member.blurb}</p>
-        {member.link && (
-          <p class="family-link">
-            <a href={member.link} target="_blank" rel="noopener noreferrer">
-              Visit site
-            </a>
-          </p>
-        )}
-      </div>
-    </article>
-  ))}
+  {
+    familyMembers.map((member) => (
+      <article class="family-card reveal" role="listitem">
+        <div class="family-card-body">
+          <h3>{member.name}</h3>
+          <img
+            src={member.image}
+            alt={`Profile icon for ${member.name}`}
+            loading="lazy"
+          />
+          <p>{member.blurb}</p>
+          {member.link && (
+            <p class="family-link">
+              <a href={member.link} target="_blank" rel="noopener noreferrer">
+                Visit site
+              </a>
+            </p>
+          )}
+        </div>
+      </article>
+    ))
+  }
 </div>

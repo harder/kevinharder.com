@@ -21,7 +21,9 @@ function getStoredTheme(): ThemeChoice {
 
 function getResolvedTheme(choice: ThemeChoice): 'dark' | 'light' {
   if (choice === 'system') {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
   }
 
   return choice;
@@ -36,13 +38,21 @@ function applyTheme(choice: ThemeChoice, persist = true): void {
     window.localStorage.setItem(THEME_STORAGE_KEY, choice);
   }
 
-  const themeButtons = document.querySelectorAll<HTMLButtonElement>('[data-theme-choice]');
+  const themeButtons = document.querySelectorAll<HTMLButtonElement>(
+    '[data-theme-choice]'
+  );
   themeButtons.forEach((button) => {
-    button.setAttribute('aria-pressed', String(button.dataset.themeChoice === choice));
+    button.setAttribute(
+      'aria-pressed',
+      String(button.dataset.themeChoice === choice)
+    );
   });
 }
 
-function listenToMediaChanges(media: MediaQueryList, callback: () => void): void {
+function listenToMediaChanges(
+  media: MediaQueryList,
+  callback: () => void
+): void {
   if (typeof media.addEventListener === 'function') {
     media.addEventListener('change', callback);
     return;
@@ -54,7 +64,9 @@ function listenToMediaChanges(media: MediaQueryList, callback: () => void): void
 }
 
 function initThemeToggle(): void {
-  const themeButtons = document.querySelectorAll<HTMLButtonElement>('[data-theme-choice]');
+  const themeButtons = document.querySelectorAll<HTMLButtonElement>(
+    '[data-theme-choice]'
+  );
   if (!themeButtons.length) {
     return;
   }
@@ -94,7 +106,9 @@ function initScrollSpy(): void {
       const element = document.getElementById(id);
       return element ? { id, element } : null;
     })
-    .filter((entry): entry is { id: string; element: HTMLElement } => Boolean(entry));
+    .filter((entry): entry is { id: string; element: HTMLElement } =>
+      Boolean(entry)
+    );
 
   const setActive = (activeId: string) => {
     links.forEach((link) => {
@@ -129,7 +143,9 @@ function initScrollSpy(): void {
         visibility.set(id, entry.isIntersecting ? entry.intersectionRatio : 0);
       });
 
-      const best = Array.from(visibility.entries()).sort((left, right) => right[1] - left[1])[0];
+      const best = Array.from(visibility.entries()).sort(
+        (left, right) => right[1] - left[1]
+      )[0];
       if (best && best[1] > 0) {
         setActive(best[0]);
       }
@@ -161,7 +177,10 @@ function showToast(message: string): void {
 }
 
 async function copyToClipboard(value: string): Promise<boolean> {
-  if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+  if (
+    navigator.clipboard &&
+    typeof navigator.clipboard.writeText === 'function'
+  ) {
     await navigator.clipboard.writeText(value);
     return true;
   }
@@ -180,7 +199,8 @@ async function copyToClipboard(value: string): Promise<boolean> {
 }
 
 function initCopyButtons(): void {
-  const buttons = document.querySelectorAll<HTMLButtonElement>('[data-copy-value]');
+  const buttons =
+    document.querySelectorAll<HTMLButtonElement>('[data-copy-value]');
   buttons.forEach((button) => {
     button.addEventListener('click', async () => {
       const value = button.dataset.copyValue;
@@ -204,7 +224,9 @@ function initRevealAnimations(): void {
     return;
   }
 
-  const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const motionReduced = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
 
   if (motionReduced || typeof window.IntersectionObserver !== 'function') {
     revealTargets.forEach((target) => target.classList.add('is-visible'));
@@ -235,7 +257,9 @@ function initRevealAnimations(): void {
 }
 
 function initStarfield(): void {
-  const canvas = document.getElementById('starfield-canvas') as HTMLCanvasElement | null;
+  const canvas = document.getElementById(
+    'starfield-canvas'
+  ) as HTMLCanvasElement | null;
   if (!canvas) {
     return;
   }
@@ -245,7 +269,9 @@ function initStarfield(): void {
     return;
   }
 
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
 
   let stars: Star[] = [];
   let width = 0;

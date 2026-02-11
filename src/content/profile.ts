@@ -14,7 +14,7 @@ export const profile = {
   ],
   email: 'kevin@kevinharder.com',
   description:
-    'Kevin Harder\'s personal web site. A Software Engineer and space-science enthusiast based in Austin.',
+    "Kevin Harder's personal web site. A Software Engineer and space-science enthusiast based in Austin.",
   social: [
     {
       label: 'LinkedIn',

@@ -71,18 +71,27 @@ const personSchema = {
       (() => {
         const storageKey = 'theme-preference';
         const stored = localStorage.getItem(storageKey);
-        const choice = stored === 'light' || stored === 'dark' || stored === 'system' ? stored : 'system';
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const resolved = choice === 'system' ? (prefersDark ? 'dark' : 'light') : choice;
+        const choice =
+          stored === 'light' || stored === 'dark' || stored === 'system'
+            ? stored
+            : 'system';
+        const prefersDark = window.matchMedia(
+          '(prefers-color-scheme: dark)'
+        ).matches;
+        const resolved =
+          choice === 'system' ? (prefersDark ? 'dark' : 'light') : choice;
         document.documentElement.dataset.theme = resolved;
         document.documentElement.dataset.themeChoice = choice;
       })();
     </script>
 
-    <script type="application/ld+json" set:html={JSON.stringify(personSchema)}></script>
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(personSchema)}
+    />
 
     <script is:inline>
-      (function(w, d, s, l, i) {
+      (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
         const f = d.getElementsByTagName(s)[0];
@@ -100,8 +109,7 @@ const personSchema = {
         src="https://www.googletagmanager.com/ns.html?id=GTM-P5X4B56J"
         height="0"
         width="0"
-        style="display:none;visibility:hidden"
-      ></iframe>
+        style="display:none;visibility:hidden"></iframe>
     </noscript>
 
     <canvas id="starfield-canvas" aria-hidden="true"></canvas>
@@ -112,13 +120,15 @@ const personSchema = {
         <a href="#home" class="wordmark">Kevin Harder</a>
         <nav aria-label="Primary">
           <ul class="site-nav">
-            {sections.map((section) => (
-              <li>
-                <a href={`#${section.id}`} data-nav-link>
-                  {section.label}
-                </a>
-              </li>
-            ))}
+            {
+              sections.map((section) => (
+                <li>
+                  <a href={`#${section.id}`} data-nav-link>
+                    {section.label}
+                  </a>
+                </li>
+              ))
+            }
           </ul>
         </nav>
         <div class="header-actions">

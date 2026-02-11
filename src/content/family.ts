@@ -15,18 +15,21 @@ export const familyMembers: FamilyMember[] = [
   },
   {
     name: 'Jillian',
-    blurb: 'An Astronomy major at Northern Arizona University in Flagstaff. Future scientist.',
+    blurb:
+      'An Astronomy major at Northern Arizona University in Flagstaff. Future scientist.',
     image: '/images/jillian.jpg',
     link: 'https://www.linkedin.com/posts/az-space-grant_research-spotlight-meet-northern-arizona-activity-7386812912679542784-FcYk/'
   },
   {
     name: 'Emma',
-    blurb: 'Neuroscience major at University of Texas in Austin. Future doctor.',
+    blurb:
+      'Neuroscience major at University of Texas in Austin. Future doctor.',
     image: '/images/emma2.jpg'
   },
   {
     name: 'Cadence',
-    blurb: 'High School senior and Color Guard star. Future occupational therapist.',
+    blurb:
+      'High School senior and Color Guard star. Future occupational therapist.',
     image: '/images/cadence.jpg'
   },
   {

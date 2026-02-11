@@ -2,17 +2,20 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #F2E8C6; /* Soft Yellow */
+  background-color: #f2e8c6; /* Soft Yellow */
   color: #333;
   font-family: 'Roboto', sans-serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: 'Orbitron', 'Space Mono', sans-serif;
-  color: #BF6F6F; /* Muted Orange */
+  color: #bf6f6f; /* Muted Orange */
 }
 
-h2, h3 {
+h2,
+h3 {
   letter-spacing: 1.1px;
 }
 
@@ -22,10 +25,10 @@ p {
 
 /* Navigation */
 nav {
-  background-color: #A0D9D9; /* Sky Blue */
+  background-color: #a0d9d9; /* Sky Blue */
   padding: 10px 0;
   font-family: 'Space Mono', monospace;
-  border-bottom: 4px solid #E3A378;
+  border-bottom: 4px solid #e3a378;
 }
 
 .navigation {
@@ -82,8 +85,8 @@ nav {
 }
 
 .navigation a:hover {
-  color: #F2A29E; /* Coral Pink */
-  color: #FFF;
+  color: #f2a29e; /* Coral Pink */
+  color: #fff;
   transition: background-color 0.3s ease;
   border-radius: 5px;
 }
@@ -100,20 +103,20 @@ nav {
 
 .hero h1 {
   font-size: 60px;
-  color: #FFF;
-  text-shadow: 2px 2px #E3A378;
+  color: #fff;
+  text-shadow: 2px 2px #e3a378;
 }
 
 .hero p {
   font-size: 22px;
-  color: #FFF;
+  color: #fff;
   max-width: 800px;
   margin: 0 auto;
 }
 
 .button {
-  background-color: #E3A378; /* Muted Orange */
-  color: #FFF;
+  background-color: #e3a378; /* Muted Orange */
+  color: #fff;
   padding: 15px 30px;
   border: none;
   border-radius: 30px;
@@ -124,14 +127,14 @@ nav {
 }
 
 .button:hover {
-  background-color: #F2A29E; /* Coral Pink */
+  background-color: #f2a29e; /* Coral Pink */
   transition: background-color 0.3s ease;
 }
 
 /* My Story Section */
 #story {
   padding: 20px 20px;
-  background-color: #E6D2AA; /* Desert Sand */
+  background-color: #e6d2aa; /* Desert Sand */
 }
 
 .story-content {
@@ -161,7 +164,6 @@ nav {
   width: 250px;
   margin: 10px 0;
 }
-
 
 .profile-image img {
   border-radius: 50%;
@@ -198,7 +200,7 @@ nav {
 
 #career {
   padding: 20px 20px;
-  background-color: #A0D9D9; /* Sky Blue */
+  background-color: #a0d9d9; /* Sky Blue */
   color: #333;
 }
 
@@ -209,7 +211,7 @@ nav {
 }
 
 .career-card {
-  background-color: #F2E8C6; /* Soft Yellow */
+  background-color: #f2e8c6; /* Soft Yellow */
   width: 320px;
   margin: 15px;
   padding: 25px;
@@ -230,12 +232,12 @@ nav {
 }
 
 .career-card h3 a {
-  color: #E3A378; /* Muted Orange */
+  color: #e3a378; /* Muted Orange */
   text-decoration: none;
 }
 
 .career-card h3 a:hover {
-  color: #A0D9D9;
+  color: #a0d9d9;
   transition: background-color 0.3s ease;
   border-radius: 5px;
 }
@@ -257,7 +259,7 @@ nav {
 /* Connect Section */
 #connect {
   padding: 20px;
-  background-color: #A3B5A6; /* Desert Sand */
+  background-color: #a3b5a6; /* Desert Sand */
 }
 
 .connect-grid {
@@ -268,7 +270,7 @@ nav {
 }
 
 .connect-card {
-  background-color: #F2E8C6; /* Soft Yellow */
+  background-color: #f2e8c6; /* Soft Yellow */
   width: 150px;
   height: 150px;
   margin: 15px;
@@ -290,24 +292,24 @@ nav {
 }
 
 .connect-card a {
-  color: #E3A378; /* Muted Orange */
+  color: #e3a378; /* Muted Orange */
   text-decoration: none;
 }
 
 .connect-card a:hover {
-  color: #A0D9D9;
+  color: #a0d9d9;
 }
 
 .retro-divider {
   border: 0;
   height: 2px;
-  background: linear-gradient(to right, transparent, #BF6F6F, transparent);
+  background: linear-gradient(to right, transparent, #bf6f6f, transparent);
   margin: 40px 0;
 }
 
 /* Footer */
 footer {
-  background-color: #B39B7F; /* Olive Green */
+  background-color: #b39b7f; /* Olive Green */
   color: #ddd;
   padding: 20px;
   position: relative;
@@ -331,7 +333,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #F2E8C6; /* Soft Yellow */
+  background-color: #f2e8c6; /* Soft Yellow */
   color: #333;
   text-decoration: none;
   margin: 10px;
@@ -342,7 +344,7 @@ footer {
 }
 
 .footer-widget:hover {
-  background-color: #E6D2AA; /* Desert Sand */
+  background-color: #e6d2aa; /* Desert Sand */
 }
 
 .widget-icon {
@@ -358,7 +360,7 @@ footer {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
   font-size: 18px;
-  color: #E3A378; /* Muted Orange */
+  color: #e3a378; /* Muted Orange */
 }
 
 .widget-text p {
@@ -381,7 +383,7 @@ footer {
 
 .greetings-image img {
   max-width: 200px;
-  border: 2px solid #E3A378; /* Muted Orange */
+  border: 2px solid #e3a378; /* Muted Orange */
   border-radius: 10px;
 }
 
@@ -455,4 +457,3 @@ footer {
     margin: 0 auto;
   }
 }
-

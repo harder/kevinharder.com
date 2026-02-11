@@ -14,15 +14,19 @@ const { project } = Astro.props;
   <p><strong>Approach:</strong> {project.approach}</p>
   <p><strong>Impact:</strong> {project.impact}</p>
   <div class="badge-row" aria-label="Tech stack">
-    {project.stack.map((stackItem) => (
-      <span class="mission-badge">{stackItem}</span>
-    ))}
+    {
+      project.stack.map((stackItem) => (
+        <span class="mission-badge">{stackItem}</span>
+      ))
+    }
   </div>
   <div class="project-links">
-    {project.links.map((link) => (
-      <a href={link.href} target="_blank" rel="noopener noreferrer">
-        {link.label}
-      </a>
-    ))}
+    {
+      project.links.map((link) => (
+        <a href={link.href} target="_blank" rel="noopener noreferrer">
+          {link.label}
+        </a>
+      ))
+    }
   </div>
 </article>

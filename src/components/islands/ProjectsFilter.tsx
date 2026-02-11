@@ -24,7 +24,8 @@ export default function ProjectsFilter({ projects }: Props) {
     const normalizedQuery = query.trim().toLowerCase();
 
     return projects.filter((project) => {
-      const matchesTag = activeTag === ALL_TAGS || project.tags.includes(activeTag);
+      const matchesTag =
+        activeTag === ALL_TAGS || project.tags.includes(activeTag);
       const searchBlob = [
         project.title,
         project.problem,
@@ -36,7 +37,8 @@ export default function ProjectsFilter({ projects }: Props) {
         .join(' ')
         .toLowerCase();
 
-      const matchesQuery = !normalizedQuery || searchBlob.includes(normalizedQuery);
+      const matchesQuery =
+        !normalizedQuery || searchBlob.includes(normalizedQuery);
       return matchesTag && matchesQuery;
     });
   }, [activeTag, projects, query]);
@@ -52,7 +54,9 @@ export default function ProjectsFilter({ projects }: Props) {
           type="search"
           placeholder="Search projects, impact, stack..."
           value={query}
-          onInput={(event) => setQuery((event.target as HTMLInputElement).value)}
+          onInput={(event) =>
+            setQuery((event.target as HTMLInputElement).value)
+          }
         />
         <div className="tag-chips" role="group" aria-label="Project filters">
           {tags.map((tag) => {
@@ -88,14 +92,22 @@ export default function ProjectsFilter({ projects }: Props) {
             </p>
             <div className="badge-row" aria-label="Tech stack">
               {project.stack.map((stack) => (
-                <span className="mission-badge" key={`${project.title}-${stack}`}>
+                <span
+                  className="mission-badge"
+                  key={`${project.title}-${stack}`}
+                >
                   {stack}
                 </span>
               ))}
             </div>
             <div className="project-links">
               {project.links.map((link) => (
-                <a href={link.href} target="_blank" rel="noopener noreferrer" key={link.href}>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={link.href}
+                >
                   {link.label}
                 </a>
               ))}
@@ -104,7 +116,9 @@ export default function ProjectsFilter({ projects }: Props) {
         ))}
       </div>
 
-      {filtered.length === 0 && <p className="empty-state">No projects match that filter yet.</p>}
+      {filtered.length === 0 && (
+        <p className="empty-state">No projects match that filter yet.</p>
+      )}
     </div>
   );
 }

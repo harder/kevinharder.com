@@ -11,7 +11,8 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: 'Austin Puzzle Exchange',
-    problem: 'Neighbors had no easy, free way to exchange used puzzles locally.',
+    problem:
+      'Neighbors had no easy, free way to exchange used puzzles locally.',
     approach:
       'Built and operated AustinPuzzles.com with lightweight workflows, clear information architecture, and strong local discoverability.',
     impact:
@@ -55,13 +56,17 @@ export const projects: Project[] = [
     stack: ['AT Protocol', 'ActivityPub', 'Microformats'],
     tags: ['OSS', 'Federation', 'Research'],
     links: [
-      { label: 'Bluesky Profile', href: 'https://bsky.app/profile/kevinharder.com' },
+      {
+        label: 'Bluesky Profile',
+        href: 'https://bsky.app/profile/kevinharder.com'
+      },
       { label: 'ActivityPub', href: 'https://github.com/w3c/activitypub' }
     ]
   },
   {
     title: '20+ Years of Personal Site Evolution',
-    problem: 'Keeping a personal site useful and current over decades is hard without maintainable structure.',
+    problem:
+      'Keeping a personal site useful and current over decades is hard without maintainable structure.',
     approach:
       'Migrated from hand-authored static HTML to an Astro content model with selective islands for high-impact interactivity.',
     impact:

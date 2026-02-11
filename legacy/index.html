@@ -1,296 +1,554 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kevin Harder - Software Engineer | Geek | Dad | Husband | Life-long learner</title>
-    <meta name="description" content="Kevin Harder's personal web site">
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-P5X4B56J');
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Kevin Harder - Software Engineer | Geek | Dad | Husband | Life-long
+      learner
+    </title>
+    <meta name="description" content="Kevin Harder's personal web site" />
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-P5X4B56J');
     </script>
-    <meta name="author" content="Kevin Harder">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Kevin Harder">
-    <meta name="twitter:site" content="@kevinharder">
+    <meta name="author" content="Kevin Harder" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Kevin Harder" />
+    <meta name="twitter:site" content="@kevinharder" />
     <meta name="twitter:url" content="https://kevinharder.com/" />
-    <meta name="twitter:image" content="https://en.gravatar.com/userimage/1023555/036897a1f128a92f84c5a81b354476b1.jpg" />
-    <meta name="twitter:description" content="Software Developer | Engineering Architect | Geek | Dad | Husband | Life-long learner | Pumpkin Aficionado | Austinite">
+    <meta
+      name="twitter:image"
+      content="https://en.gravatar.com/userimage/1023555/036897a1f128a92f84c5a81b354476b1.jpg"
+    />
+    <meta
+      name="twitter:description"
+      content="Software Developer | Engineering Architect | Geek | Dad | Husband | Life-long learner | Pumpkin Aficionado | Austinite"
+    />
     <meta property="og:title" content="Kevin Harder" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://kevinharder.com/" />
-    <meta property="og:description" content="Kevin Harder's personal web site" />
+    <meta
+      property="og:description"
+      content="Kevin Harder's personal web site"
+    />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Kevin Harder" />
-    <meta property="og:image" content="https://en.gravatar.com/userimage/1023555/036897a1f128a92f84c5a81b354476b1.jpg" />
-    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&family=Space+Mono&family=DM+Serif+Display&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta
+      property="og:image"
+      content="https://en.gravatar.com/userimage/1023555/036897a1f128a92f84c5a81b354476b1.jpg"
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&family=Space+Mono&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <script src="script.js"></script>
-</head>
+  </head>
 
-<body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5X4B56J" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <body>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-P5X4B56J"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
     <header>
-        <nav>
-            <div class="hamburger" onclick="toggleMenu()">☰</div>
-            <ul class="navigation">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#story">My Odyssey</a></li>
-                <li><a href="#career">Career Trajectory</a></li>
-                <li><a href="#connect">Connect</a></li>
-            </ul>
-        </nav>
-        <div class="hero">
-            <h1>Kevin Harder</h1>
-            <p>Exploring the frontiers of technology and the cosmos to advance human knowledge and innovation</p>
-        </div>
+      <nav>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul class="navigation">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#story">My Odyssey</a></li>
+          <li><a href="#career">Career Trajectory</a></li>
+          <li><a href="#connect">Connect</a></li>
+        </ul>
+      </nav>
+      <div class="hero">
+        <h1>Kevin Harder</h1>
+        <p>
+          Exploring the frontiers of technology and the cosmos to advance human
+          knowledge and innovation
+        </p>
+      </div>
     </header>
     <main>
-        <section id="story">
-            <h2>My Odyssey</h2>
-            <div class="story-content">
-                <div class="image-container">
-                    <div class="profile-image"><img src="images/profile2.jpg" alt="Kevin Harder"></div>
-                    <img src="images/profile.jpg" alt="Kevin Harder">
-                    <a href="https://www.jpl.nasa.gov/images/the-grand-tour-jpl-travel-poster" target="_blank"><img
-                            src="images/grand_tour.jpg" alt="The Grand Tour - NASA JPL Travel Poster"></a>
-                </div>
-                <div class="text-content">
-
-                    <p>Greetings, fellow explorer!<br />
-                        I'm Kevin — a father, husband, software engineer, geek, and inquisitive explorer charting a
-                        course through the vast expanse of life. Originally from the sunny shores of southwest
-                        Florida, I've been residing in Austin, Texas, since 2010.</p>
-
-                    <p>I have a deep-seated curiosity about the universe and a passion for learning across diverse
-                        fields. As an enthusiast of space, science, and technology, I enjoy exploring the mysteries of
-                        the cosmos and the principles that govern it. Born at the same time the twin <a
-                            href="https://science.nasa.gov/mission/voyager/">Voyager spacecraft</a> embarked on their
-                        Grand Tour of the solar system, I feel a sort of kinship with them. Their journey into
-                        interstellar space inspires my own pursuit of knowledge and exploration.</p>
-
-                    <p>I have a penchant for delicious BBQ, good beer, the Florida Gators, and the timeless allure of
-                        pumpkins. I also collect vintage computers and devices that hold nostalgic significance,
-                        reminding me of the technological milestones that have shaped our journey.</p>
-
-                    <p>I've maintained a personal web site at <a href="https://kevinharder.com" title="KevinHarder.com"
-                            rel="self">KevinHarder.com</a> for over 20 years, where I occasionally share my thoughts and
-                        musings. I am interested in federated, decentralized social and content networks, exploring ways
-                        to evolve the internet from isolated islands and gated social platforms into a more
-                        interconnected, open frontier. I'm currently exploring
-                        <a href="https://bsky.app/profile/kevinharder.com" target="_blank">Bluesky</a> and it's
-                        <a href="https://atproto.com/" target="_blank">AT Protocol</a>,
-                        the <a href="https://github.com/w3c/activitypub" target="_blank">ActivityPub</a> and
-                        Mastodon/Fediverse network, and microformats. Nevertheless you can also still <a href="#connect">find me</a>
-                        on the major centralized social networks. I also like contributing to open-source development projects.</p>
-
-                    <p> I attended Florida Institute of Technology, majoring in Space Science and Astrophysics. I
-                        discovered during college that I had a passion for programming, and have made a career out of
-                        it. I have built and led a wide variety of software projects in multiple industries. You can
-                        view my full professional experience on <a href="https://www.linkedin.com/in/kevinharder/"
-                            target="_blank" rel="noopener" title="Kevin Harder's LinkedIn profile">my LinkedIn
-                            profile</a>. Currently I work out of my home office in Austin as a principal software engineer. </p>
-
-                    <p>Together with my wonderful wife, I operate a free community puzzle exchange in Austin at <a
-                            href="https://austinpuzzles.com" title="Austin Puzzles">AustinPuzzles.com</a>, bringing
-                        people together one piece at a time. Under the <a href="https://harder.dev"
-                            title="Harder.DEV">Harder.DEV</a> banner, I offer consulting services and work on some side projects.</p>
-
-                    <p>I invite you to join me in exploring the frontiers of technology, science, and human connection
-                        as we seek to expand our understanding and push the boundaries of innovation.</p>
-
-                    <hr class="retro-divider">
-                </div>
+      <section id="story">
+        <h2>My Odyssey</h2>
+        <div class="story-content">
+          <div class="image-container">
+            <div class="profile-image">
+              <img src="images/profile2.jpg" alt="Kevin Harder" />
             </div>
-        </section>
+            <img src="images/profile.jpg" alt="Kevin Harder" />
+            <a
+              href="https://www.jpl.nasa.gov/images/the-grand-tour-jpl-travel-poster"
+              target="_blank"
+              ><img
+                src="images/grand_tour.jpg"
+                alt="The Grand Tour - NASA JPL Travel Poster"
+            /></a>
+          </div>
+          <div class="text-content">
+            <p>
+              Greetings, fellow explorer!<br />
+              I'm Kevin — a father, husband, software engineer, geek, and
+              inquisitive explorer charting a course through the vast expanse of
+              life. Originally from the sunny shores of southwest Florida, I've
+              been residing in Austin, Texas, since 2010.
+            </p>
 
-        <section id="career">
-            <h2>Career Trajectory</h2>
-            <div class="career-grid">
-                <div class="career-card">
-                    <img src="images/ebay_logo.jpg" alt="eBay" />
-                    <img src="images/tcgplayer_logo.jpg" alt="TCG Player" />
-                    <h3> <a href="https://www.ebay.com" title="eBay">eBay</a> <a href="https://www.tcgplayer.com/"
-                            title="TCGplayer">TCGplayer</a></h3>
-                    <h4>Principal Software Engineer</h4>
-                    <h4>April 2024 - Present</h4>
-                    <p>Working on the IMS team in the TCG Player org within eBay.</p>
-                </div>
+            <p>
+              I have a deep-seated curiosity about the universe and a passion
+              for learning across diverse fields. As an enthusiast of space,
+              science, and technology, I enjoy exploring the mysteries of the
+              cosmos and the principles that govern it. Born at the same time
+              the twin
+              <a href="https://science.nasa.gov/mission/voyager/"
+                >Voyager spacecraft</a
+              >
+              embarked on their Grand Tour of the solar system, I feel a sort of
+              kinship with them. Their journey into interstellar space inspires
+              my own pursuit of knowledge and exploration.
+            </p>
 
-                <div class="career-card">
-                    <img src="images/instructure_logo.jpg" alt="Instructure">
-                    <h3><a href="https://www.instructure.com" title="Instructure">Instructure</a></h3>
-                    <h4>Engineering Architect</h4>
-                    <h4>September 2022 - April 2024</h4>
-                    <p>Led a team of architects and principal engineers at Instructure, the makers of <a
-                            href="https://www.instructure.com/canvas" title="Canvas LMS">Canvas LMS</a> and other
-                        ed-tech products.</p>
-                </div>
+            <p>
+              I have a penchant for delicious BBQ, good beer, the Florida
+              Gators, and the timeless allure of pumpkins. I also collect
+              vintage computers and devices that hold nostalgic significance,
+              reminding me of the technological milestones that have shaped our
+              journey.
+            </p>
 
-                <div class="career-card">
-                    <img src="images/square_logo.jpg" alt="Square">
-                    <h3><a href="https://squareup.com" title="Square">Square</a></h3>
-                    <h4>Software Engineering Manager</h4>
-                    <h4>July 2021 - September 2022</h4>
-                    <p>Led the Orders Aggregation team at Square (aka Block).</p>
-                </div>
+            <p>
+              I've maintained a personal web site at
+              <a
+                href="https://kevinharder.com"
+                title="KevinHarder.com"
+                rel="self"
+                >KevinHarder.com</a
+              >
+              for over 20 years, where I occasionally share my thoughts and
+              musings. I am interested in federated, decentralized social and
+              content networks, exploring ways to evolve the internet from
+              isolated islands and gated social platforms into a more
+              interconnected, open frontier. I'm currently exploring
+              <a href="https://bsky.app/profile/kevinharder.com" target="_blank"
+                >Bluesky</a
+              >
+              and it's
+              <a href="https://atproto.com/" target="_blank">AT Protocol</a>,
+              the
+              <a href="https://github.com/w3c/activitypub" target="_blank"
+                >ActivityPub</a
+              >
+              and Mastodon/Fediverse network, and microformats. Nevertheless you
+              can also still <a href="#connect">find me</a> on the major
+              centralized social networks. I also like contributing to
+              open-source development projects.
+            </p>
 
-                <div class="career-card">
-                    <img src="images/indeed_logo.jpg" alt="Indeed">
-                    <h3><a href="https://www.indeed.com" title="Indeed.com">Indeed.com</a></h3>
-                    <h4>Engineering Manager</h4>
-                    <h4>May 2017 - July 2021</h4>
-                    <p>Manager for the Employer Candidates team, and then an Engineering Manager within Indeed
-                        Incubator, building products that helped people get jobs.</p>
-                </div>
+            <p>
+              I attended Florida Institute of Technology, majoring in Space
+              Science and Astrophysics. I discovered during college that I had a
+              passion for programming, and have made a career out of it. I have
+              built and led a wide variety of software projects in multiple
+              industries. You can view my full professional experience on
+              <a
+                href="https://www.linkedin.com/in/kevinharder/"
+                target="_blank"
+                rel="noopener"
+                title="Kevin Harder's LinkedIn profile"
+                >my LinkedIn profile</a
+              >. Currently I work out of my home office in Austin as a principal
+              software engineer.
+            </p>
 
-                <div class="career-card">
-                    <img src="images/kibo_logo.jpg" alt="Kibo">
-                    <h3><a href="https://kibocommerce.com" title="Kibo Commerce">Kibo Commerce</a></h3>
-                    <h4>Engineering Manager</h4>
-                    <h4>October 2016 - May 2017</h4>
-                    <p>Led the Kibo eCommerce platform dev team. Kibo acquired Mozu in Oct 2016.</p>
-                </div>
+            <p>
+              Together with my wonderful wife, I operate a free community puzzle
+              exchange in Austin at
+              <a href="https://austinpuzzles.com" title="Austin Puzzles"
+                >AustinPuzzles.com</a
+              >, bringing people together one piece at a time. Under the
+              <a href="https://harder.dev" title="Harder.DEV">Harder.DEV</a>
+              banner, I offer consulting services and work on some side
+              projects.
+            </p>
 
-                <div class="career-card">
-                    <img src="images/mozu_logo.jpg" alt="Mozu">
-                    <h3><a href="https://www.mozu.com" title="Mozu">Mozu</a></h3>
-                    <h4>Principal Software Engineer</h4>
-                    <h4>September 2012 - October 2016</h4>
-                    <p>Built search, messaging, event bus, and core catalog systems for the Mozu modern SaaS e-commerce
-                        platform startup.</p>
-                </div>
+            <p>
+              I invite you to join me in exploring the frontiers of technology,
+              science, and human connection as we seek to expand our
+              understanding and push the boundaries of innovation.
+            </p>
 
-                <div class="career-card">
-                    <img src="images/perficient_logo.jpg" alt="Perficient">
-                    <h3><a href="https://www.perficient.com" title="Perficient">Perficient</a></h3>
-                    <h4>Technical Architect</h4>
-                    <h4>September 2011 - September 2012</h4>
-                    <p>Worked on several projects within Dell as a consultant.</p>
-                </div>
+            <hr class="retro-divider" />
+          </div>
+        </div>
+      </section>
 
-                <div class="career-card">
-                    <img src="images/dell_logo.jpg" alt="Dell">
-                    <h3><a href="https://dell.com" title="Dell">Dell</a></h3>
-                    <h4>Lead Software Engineer</h4>
-                    <h4>April 2010 - September 2011</h4>
-                    <p>Led the eDell search team, and built a new search platform for Dell.com.</p>
-                </div>
+      <section id="career">
+        <h2>Career Trajectory</h2>
+        <div class="career-grid">
+          <div class="career-card">
+            <img src="images/ebay_logo.jpg" alt="eBay" />
+            <img src="images/tcgplayer_logo.jpg" alt="TCG Player" />
+            <h3>
+              <a href="https://www.ebay.com" title="eBay">eBay</a>
+              <a href="https://www.tcgplayer.com/" title="TCGplayer"
+                >TCGplayer</a
+              >
+            </h3>
+            <h4>Principal Software Engineer</h4>
+            <h4>April 2024 - Present</h4>
+            <p>Working on the IMS team in the TCG Player org within eBay.</p>
+          </div>
 
-                <div class="career-card">
-                    <img src="images/telligent_logo.jpg" alt="Telligent">
-                    <h3><a href="https://telligent.com" title="Telligent">Telligent</a></h3>
-                    <h4>Software Development Engineer</h4>
-                    <h4>June 2005 - April 2010</h4>
-                    <p>Developed enterprise social collaboration software such as Community Server and Graffiti CMS.</p>
-                </div>
+          <div class="career-card">
+            <img src="images/instructure_logo.jpg" alt="Instructure" />
+            <h3>
+              <a href="https://www.instructure.com" title="Instructure"
+                >Instructure</a
+              >
+            </h3>
+            <h4>Engineering Architect</h4>
+            <h4>September 2022 - April 2024</h4>
+            <p>
+              Led a team of architects and principal engineers at Instructure,
+              the makers of
+              <a href="https://www.instructure.com/canvas" title="Canvas LMS"
+                >Canvas LMS</a
+              >
+              and other ed-tech products.
+            </p>
+          </div>
 
-                <div class="career-card">
-                    <img src="images/accessgroup_logo.jpg" alt="Access Group">
-                    <h3>Access Group</h3>
-                    <h4>Programmer / Analyst</h4>
-                    <h4>February 2001 - May 2005</h4>
-                    <p>Modernized a student loan disbursement and funding system.</p>
-                </div>
+          <div class="career-card">
+            <img src="images/square_logo.jpg" alt="Square" />
+            <h3><a href="https://squareup.com" title="Square">Square</a></h3>
+            <h4>Software Engineering Manager</h4>
+            <h4>July 2021 - September 2022</h4>
+            <p>Led the Orders Aggregation team at Square (aka Block).</p>
+          </div>
 
-            </div>
-        </section>
+          <div class="career-card">
+            <img src="images/indeed_logo.jpg" alt="Indeed" />
+            <h3>
+              <a href="https://www.indeed.com" title="Indeed.com">Indeed.com</a>
+            </h3>
+            <h4>Engineering Manager</h4>
+            <h4>May 2017 - July 2021</h4>
+            <p>
+              Manager for the Employer Candidates team, and then an Engineering
+              Manager within Indeed Incubator, building products that helped
+              people get jobs.
+            </p>
+          </div>
 
-        <section id="connect">
-            <h2>Connect with Me</h2>
-            <div class="connect-grid">
-                <div class="connect-card">
-                    <a href="https://www.linkedin.com/in/KevinHarder" target="_blank" rel="noopener"
-                        title="Kevin on LinkedIn"><img src="images/icon-li.png" class="social-icon" alt="LinkedIn"></a>
-                    <h3><a href="https://www.linkedin.com/in/KevinHarder" target="_blank" rel="noopener"
-                            title="Kevin on LinkedIn">LinkedIn</a></h3>
-                </div>
-                <div class="connect-card">
-                    <a href="https://github.com/Harder/" target="_blank" rel="noopener" title="Kevin on GitHub"><img
-                            src="images/icon-github.png" class="social-icon" alt="GitHub"></a>
-                    <h3><a href="https://github.com/Harder/" target="_blank" rel="noopener"
-                            title="Kevin on GitHub">GitHub</a></h3>
-                </div>
-                <div class="connect-card">
-                    <a href="https://bsky.app/profile/kevinharder.com" target="_blank" rel="noopener"
-                        title="Kevin on BlueSky (AT Protocol)"><img src="images/icon-bluesky.png" class="social-icon"
-                            alt="Bluesky"></a>
-                    <h3><a href="https://bsky.app/profile/kevinharder.com" target="_blank" rel="noopener"
-                            title="Kevin on BlueSky (AT Protocol)">BlueSky</a></h3>
-                </div>
-                <div class="connect-card">
-                    <a href="https://hachyderm.io/@harder" rel="me" title="Kevin on Mastodon | Fediverse"><img
-                            src="images/icon-mastodon.png" class="social-icon" alt="Mastodon | Fediverse"></a>
-                    <h3><a href="https://hachyderm.io/@harder" rel="me"
-                            title="Kevin on Mastodon | Fediverse">Mastodon</a></h3>
-                </div>
-                <div class="connect-card">
-                    <a href="https://twitter.com/KevinHarder" target="_blank" rel="noopener"
-                        title="Kevin on Twitter"><img src="images/icon-twitter.png" class="social-icon"
-                            alt="Twitter"></a>
-                    <h3><a href="https://twitter.com/KevinHarder" target="_blank" rel="noopener"
-                            title="Kevin on Twitter">X | Twitter</a></h3>
-                </div>
-                <div class="connect-card">
-                    <a href="https://www.threads.net/@kevin_harder" target="_blank" rel="noopener"
-                        title="Kevin on Threads"><img src="images/icon-threads.png" class="social-icon"
-                            alt="Threads"></a>
-                    <h3><a href="https://www.threads.net/@kevin_harder" target="_blank" rel="noopener"
-                            title="Kevin on Threads">Threads</a></h3>
-                </div>
-                <div class="connect-card">
-                    <a href="https://www.instagram.com/kevin_harder" target="_blank" rel="noopener"
-                        title="Kevin on Instagram"><img src="images/icon-insta.png" class="social-icon"
-                            alt="Instagram"></a>
-                    <h3><a href="https://www.instagram.com/kevin_harder" target="_blank" rel="noopener"
-                            title="Kevin on Instagram">Instagram</a></h3>
-                </div>
-                <div class="connect-card">
-                    <a href="https://www.youtube.com/KevinHarder" target="_blank" rel="noopener"
-                        title="Kevin on YouTube"><img src="images/icon-yt.png" class="social-icon" alt="YouTube"></a>
-                    <h3><a href="https://www.youtube.com/KevinHarder" target="_blank" rel="noopener"
-                            title="Kevin on YouTube">YouTube</a></h3>
-                </div>
-            </div>
-        </section>
+          <div class="career-card">
+            <img src="images/kibo_logo.jpg" alt="Kibo" />
+            <h3>
+              <a href="https://kibocommerce.com" title="Kibo Commerce"
+                >Kibo Commerce</a
+              >
+            </h3>
+            <h4>Engineering Manager</h4>
+            <h4>October 2016 - May 2017</h4>
+            <p>
+              Led the Kibo eCommerce platform dev team. Kibo acquired Mozu in
+              Oct 2016.
+            </p>
+          </div>
+
+          <div class="career-card">
+            <img src="images/mozu_logo.jpg" alt="Mozu" />
+            <h3><a href="https://www.mozu.com" title="Mozu">Mozu</a></h3>
+            <h4>Principal Software Engineer</h4>
+            <h4>September 2012 - October 2016</h4>
+            <p>
+              Built search, messaging, event bus, and core catalog systems for
+              the Mozu modern SaaS e-commerce platform startup.
+            </p>
+          </div>
+
+          <div class="career-card">
+            <img src="images/perficient_logo.jpg" alt="Perficient" />
+            <h3>
+              <a href="https://www.perficient.com" title="Perficient"
+                >Perficient</a
+              >
+            </h3>
+            <h4>Technical Architect</h4>
+            <h4>September 2011 - September 2012</h4>
+            <p>Worked on several projects within Dell as a consultant.</p>
+          </div>
+
+          <div class="career-card">
+            <img src="images/dell_logo.jpg" alt="Dell" />
+            <h3><a href="https://dell.com" title="Dell">Dell</a></h3>
+            <h4>Lead Software Engineer</h4>
+            <h4>April 2010 - September 2011</h4>
+            <p>
+              Led the eDell search team, and built a new search platform for
+              Dell.com.
+            </p>
+          </div>
+
+          <div class="career-card">
+            <img src="images/telligent_logo.jpg" alt="Telligent" />
+            <h3>
+              <a href="https://telligent.com" title="Telligent">Telligent</a>
+            </h3>
+            <h4>Software Development Engineer</h4>
+            <h4>June 2005 - April 2010</h4>
+            <p>
+              Developed enterprise social collaboration software such as
+              Community Server and Graffiti CMS.
+            </p>
+          </div>
+
+          <div class="career-card">
+            <img src="images/accessgroup_logo.jpg" alt="Access Group" />
+            <h3>Access Group</h3>
+            <h4>Programmer / Analyst</h4>
+            <h4>February 2001 - May 2005</h4>
+            <p>Modernized a student loan disbursement and funding system.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="connect">
+        <h2>Connect with Me</h2>
+        <div class="connect-grid">
+          <div class="connect-card">
+            <a
+              href="https://www.linkedin.com/in/KevinHarder"
+              target="_blank"
+              rel="noopener"
+              title="Kevin on LinkedIn"
+              ><img src="images/icon-li.png" class="social-icon" alt="LinkedIn"
+            /></a>
+            <h3>
+              <a
+                href="https://www.linkedin.com/in/KevinHarder"
+                target="_blank"
+                rel="noopener"
+                title="Kevin on LinkedIn"
+                >LinkedIn</a
+              >
+            </h3>
+          </div>
+          <div class="connect-card">
+            <a
+              href="https://github.com/Harder/"
+              target="_blank"
+              rel="noopener"
+              title="Kevin on GitHub"
+              ><img
+                src="images/icon-github.png"
+                class="social-icon"
+                alt="GitHub"
+            /></a>
+            <h3>
+              <a
+                href="https://github.com/Harder/"
+                target="_blank"
+                rel="noopener"
+                title="Kevin on GitHub"
+                >GitHub</a
+              >
+            </h3>
+          </div>
+          <div class="connect-card">
+            <a
+              href="https://bsky.app/profile/kevinharder.com"
+              target="_blank"
+              rel="noopener"
+              title="Kevin on BlueSky (AT Protocol)"
+              ><img
+                src="images/icon-bluesky.png"
+                class="social-icon"
+                alt="Bluesky"
+            /></a>
+            <h3>
+              <a
+                href="https://bsky.app/profile/kevinharder.com"
+                target="_blank"
+                rel="noopener"
+                title="Kevin on BlueSky (AT Protocol)"
+                >BlueSky</a
+              >
+            </h3>
+          </div>
+          <div class="connect-card">
+            <a
+              href="https://hachyderm.io/@harder"
+              rel="me"
+              title="Kevin on Mastodon | Fediverse"
+              ><img
+                src="images/icon-mastodon.png"
+                class="social-icon"
+                alt="Mastodon | Fediverse"
+            /></a>
+            <h3>
+              <a
+                href="https://hachyderm.io/@harder"
+                rel="me"
+                title="Kevin on Mastodon | Fediverse"
+                >Mastodon</a
+              >
+            </h3>
+          </div>
+          <div class="connect-card">
+            <a
+              href="https://twitter.com/KevinHarder"
+              target="_blank"
+              rel="noopener"
+              title="Kevin on Twitter"
+              ><img
+                src="images/icon-twitter.png"
+                class="social-icon"
+                alt="Twitter"
+            /></a>
+            <h3>
+              <a
+                href="https://twitter.com/KevinHarder"
+                target="_blank"
+                rel="noopener"
+                title="Kevin on Twitter"
+                >X | Twitter</a
+              >
+            </h3>
+          </div>
+          <div class="connect-card">
+            <a
+              href="https://www.threads.net/@kevin_harder"
+              target="_blank"
+              rel="noopener"
+              title="Kevin on Threads"
+              ><img
+                src="images/icon-threads.png"
+                class="social-icon"
+                alt="Threads"
+            /></a>
+            <h3>
+              <a
+                href="https://www.threads.net/@kevin_harder"
+                target="_blank"
+                rel="noopener"
+                title="Kevin on Threads"
+                >Threads</a
+              >
+            </h3>
+          </div>
+          <div class="connect-card">
+            <a
+              href="https://www.instagram.com/kevin_harder"
+              target="_blank"
+              rel="noopener"
+              title="Kevin on Instagram"
+              ><img
+                src="images/icon-insta.png"
+                class="social-icon"
+                alt="Instagram"
+            /></a>
+            <h3>
+              <a
+                href="https://www.instagram.com/kevin_harder"
+                target="_blank"
+                rel="noopener"
+                title="Kevin on Instagram"
+                >Instagram</a
+              >
+            </h3>
+          </div>
+          <div class="connect-card">
+            <a
+              href="https://www.youtube.com/KevinHarder"
+              target="_blank"
+              rel="noopener"
+              title="Kevin on YouTube"
+              ><img src="images/icon-yt.png" class="social-icon" alt="YouTube"
+            /></a>
+            <h3>
+              <a
+                href="https://www.youtube.com/KevinHarder"
+                target="_blank"
+                rel="noopener"
+                title="Kevin on YouTube"
+                >YouTube</a
+              >
+            </h3>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-widgets">
-                <a href="https://harder.dev" class="footer-widget" target="_blank" title="Harder.DEV">
-                    <div class="widget-icon">
-                        <img src="images/harder-dev.jpg" alt="Software Development Icon">
-                    </div>
-                    <div class="widget-text">
-                        <h3>Harder.DEV</h3>
-                        <p>Engineering Tomorrow’s Possibilities Today</p>
-                    </div>
-                </a>
-                <a href="https://austinpuzzles.com" class="footer-widget" target="_blank" title="Austin Puzzles">
-                    <div class="widget-icon">
-                        <img src="images/puzzle1.jpg" alt="Puzzle Icon">
-                    </div>
-                    <div class="widget-text">
-                        <h3>Austin Puzzle Exchange</h3>
-                        <p>Exchange puzzles with your neighbors: easy, free, local, fun!</p>
-                    </div>
-                </a>
-                <div class="greetings-image">
-                    <img src="images/exoplanet_greetings.jpg" alt="Exoplanet Greetings">
-                </div>
+      <div class="footer-content">
+        <div class="footer-widgets">
+          <a
+            href="https://harder.dev"
+            class="footer-widget"
+            target="_blank"
+            title="Harder.DEV"
+          >
+            <div class="widget-icon">
+              <img
+                src="images/harder-dev.jpg"
+                alt="Software Development Icon"
+              />
             </div>
+            <div class="widget-text">
+              <h3>Harder.DEV</h3>
+              <p>Engineering Tomorrow’s Possibilities Today</p>
+            </div>
+          </a>
+          <a
+            href="https://austinpuzzles.com"
+            class="footer-widget"
+            target="_blank"
+            title="Austin Puzzles"
+          >
+            <div class="widget-icon">
+              <img src="images/puzzle1.jpg" alt="Puzzle Icon" />
+            </div>
+            <div class="widget-text">
+              <h3>Austin Puzzle Exchange</h3>
+              <p>
+                Exchange puzzles with your neighbors: easy, free, local, fun!
+              </p>
+            </div>
+          </a>
+          <div class="greetings-image">
+            <img
+              src="images/exoplanet_greetings.jpg"
+              alt="Exoplanet Greetings"
+            />
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Kevin Harder. &nbsp; Space tourism posters courtesy NASA/JPL-Caltech.</p>
-        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2024 Kevin Harder. &nbsp; Space tourism posters courtesy
+          NASA/JPL-Caltech.
+        </p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

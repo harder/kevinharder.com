@@ -10,7 +10,9 @@ function getStoredTheme() {
 
 function getResolvedTheme(choice) {
   if (choice === 'system') {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
   }
   return choice;
 }
@@ -26,7 +28,10 @@ function applyTheme(choice, persist = true) {
 
   const themeButtons = document.querySelectorAll('[data-theme-choice]');
   themeButtons.forEach((button) => {
-    button.setAttribute('aria-pressed', String(button.dataset.themeChoice === choice));
+    button.setAttribute(
+      'aria-pressed',
+      String(button.dataset.themeChoice === choice)
+    );
   });
 }
 
@@ -117,7 +122,9 @@ function initScrollSpy() {
         visibility.set(id, entry.isIntersecting ? entry.intersectionRatio : 0);
       });
 
-      const best = Array.from(visibility.entries()).sort((left, right) => right[1] - left[1])[0];
+      const best = Array.from(visibility.entries()).sort(
+        (left, right) => right[1] - left[1]
+      )[0];
       if (best && best[1] > 0) {
         setActive(best[0]);
       }
@@ -149,7 +156,10 @@ function showToast(message) {
 }
 
 async function copyToClipboard(value) {
-  if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+  if (
+    navigator.clipboard &&
+    typeof navigator.clipboard.writeText === 'function'
+  ) {
     await navigator.clipboard.writeText(value);
     return true;
   }
@@ -192,7 +202,9 @@ function initRevealAnimations() {
     return;
   }
 
-  const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const motionReduced = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
 
   if (motionReduced || typeof window.IntersectionObserver !== 'function') {
     revealTargets.forEach((target) => target.classList.add('is-visible'));
@@ -233,7 +245,9 @@ function initStarfield() {
     return;
   }
 
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
 
   let stars = [];
   let width = 0;
