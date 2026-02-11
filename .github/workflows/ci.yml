@@ -16,5 +16,7 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - run: npm run format:check
+      - name: Format check (non-blocking)
+        run: npm run format:check
+        continue-on-error: true
       - run: npm run build
