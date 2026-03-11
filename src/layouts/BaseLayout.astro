@@ -3,7 +3,6 @@ import '../styles/global.css';
 import { kevinProfileImage } from '../assets/images';
 import { profile } from '../content/profile';
 import { sections } from '../content/sections';
-import siteEnhancementsUrl from '../scripts/site-enhancements.ts?url';
 
 interface Props {
   title?: string;
@@ -145,6 +144,8 @@ const personSchema = {
 
     <div id="site-toast" role="status" aria-live="polite"></div>
 
-    <script is:inline type="module" src={siteEnhancementsUrl}></script>
+    <script>
+      import '../scripts/site-enhancements.ts';
+    </script>
   </body>
 </html>
