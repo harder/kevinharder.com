@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { careerRoles } from '../content/career';
 ---
 
@@ -10,7 +11,7 @@ import { careerRoles } from '../content/career';
           <div class="career-summary-row">
             <div class="career-logos" aria-hidden="true">
               {role.logos.map((logo) => (
-                <img src={logo} alt="" loading="lazy" />
+                <Image src={logo} alt="" loading="lazy" />
               ))}
             </div>
             <div>

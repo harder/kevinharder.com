@@ -1,7 +1,9 @@
 ---
 import '../styles/global.css';
+import { kevinProfileImage } from '../assets/images';
 import { profile } from '../content/profile';
 import { sections } from '../content/sections';
+import siteEnhancementsUrl from '../scripts/site-enhancements.ts?url';
 
 interface Props {
   title?: string;
@@ -12,11 +14,11 @@ interface Props {
 
 const { title, description, canonical, ogImage } = Astro.props;
 
-const pageTitle = profile.name;
+const pageTitle = title ? `${profile.name} | ${title}` : profile.name;
 const metaDescription = description ?? profile.description;
 const site = Astro.site ?? new URL('https://kevinharder.com');
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, site).toString();
-const socialImage = new URL(ogImage ?? '/images/profile3.jpg', site).toString();
+const socialImage = new URL(ogImage ?? kevinProfileImage.src, site).toString();
 
 const personSchema = {
   '@context': 'https://schema.org',
@@ -60,13 +62,6 @@ const personSchema = {
     <meta name="twitter:image" content={socialImage} />
     <meta name="twitter:site" content="@kevinharder" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-
     <script is:inline>
       (() => {
         const storageKey = 'theme-preference';
@@ -86,6 +81,7 @@ const personSchema = {
     </script>
 
     <script
+      is:inline
       type="application/ld+json"
       set:html={JSON.stringify(personSchema)}
     />
@@ -149,6 +145,6 @@ const personSchema = {
 
     <div id="site-toast" role="status" aria-live="polite"></div>
 
-    <script type="module" src="/scripts/site-enhancements.js"></script>
+    <script is:inline type="module" src={siteEnhancementsUrl}></script>
   </body>
 </html>

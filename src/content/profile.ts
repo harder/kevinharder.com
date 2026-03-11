@@ -1,3 +1,5 @@
+import type { SocialLink } from '../types/content';
+
 export const profile = {
   name: 'Kevin Harder',
   title: 'Principal Software Engineer',
@@ -56,5 +58,5 @@ export const profile = {
       href: 'https://www.youtube.com/KevinHarder',
       icon: '/images/icon-yt.png'
     }
-  ]
+  ] satisfies SocialLink[]
 } as const;

@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import { grandTourImage } from '../assets/images';
 import { profile } from '../content/profile';
 ---
 
@@ -21,8 +23,8 @@ import { profile } from '../content/profile';
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img
-        src="/images/grand_tour.jpg"
+      <Image
+        src={grandTourImage}
         alt="The Grand Tour NASA JPL poster"
         loading="eager"
       />

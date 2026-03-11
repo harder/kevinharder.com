@@ -1,4 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import {
+  kevinGhostbustersImage,
+  kevinKidImage,
+  kevinProfileImage,
+  kevinVlaImage
+} from '../assets/images';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import Section from '../components/Section.astro';
@@ -21,24 +28,24 @@ import Footer from '../components/Footer.astro';
   >
     <div class="odyssey-layout">
       <div class="odyssey-media reveal">
-        <img
-          src="/images/profile3.jpg"
+        <Image
+          src={kevinProfileImage}
           alt="Kevin at work"
           loading="lazy"
           class="avatar"
         />
-        <img
-          src="/images/kevin_vla3.jpg"
+        <Image
+          src={kevinVlaImage}
           alt="Kevin at the Very Large Array"
           loading="lazy"
         />
-        <img
-          src="/images/kevin_kid.jpg"
+        <Image
+          src={kevinKidImage}
           alt="Kevin in a homemade astronaut costume as a child"
           loading="lazy"
         />
-        <img
-          src="/images/kevin_gb.jpg"
+        <Image
+          src={kevinGhostbustersImage}
           alt="Kevin and his boys as Ghostbusters at Austin ComicCon"
           loading="lazy"
         />

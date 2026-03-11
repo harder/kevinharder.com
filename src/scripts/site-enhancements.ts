@@ -49,20 +49,6 @@ function applyTheme(choice: ThemeChoice, persist = true): void {
   });
 }
 
-function listenToMediaChanges(
-  media: MediaQueryList,
-  callback: () => void
-): void {
-  if (typeof media.addEventListener === 'function') {
-    media.addEventListener('change', callback);
-    return;
-  }
-
-  if (typeof media.addListener === 'function') {
-    media.addListener(callback);
-  }
-}
-
 function initThemeToggle(): void {
   const themeButtons = document.querySelectorAll<HTMLButtonElement>(
     '[data-theme-choice]'
@@ -84,7 +70,7 @@ function initThemeToggle(): void {
   });
 
   const media = window.matchMedia('(prefers-color-scheme: dark)');
-  listenToMediaChanges(media, () => {
+  media.addEventListener('change', () => {
     if (getStoredTheme() === 'system') {
       applyTheme('system', false);
     }

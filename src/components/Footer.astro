@@ -1,8 +1,17 @@
+---
+import { Image } from 'astro:assets';
+import {
+  exoplanetGreetingsImage,
+  harderDevImage,
+  puzzleExchangeImage
+} from '../assets/images';
+---
+
 <footer>
   <div class="footer-grid">
     <details class="footer-widget reveal">
       <summary>
-        <img src="/images/harder-dev.jpg" alt="Harder.dev" loading="lazy" />
+        <Image src={harderDevImage} alt="Harder.dev" loading="lazy" />
         <div class="footer-summary-copy">
           <h3>Harder.DEV</h3>
           <p>Engineering tomorrow's possibilities today.</p>
@@ -26,8 +35,8 @@
 
     <details class="footer-widget reveal">
       <summary>
-        <img
-          src="/images/puzzle2.jpg"
+        <Image
+          src={puzzleExchangeImage}
           alt="Austin Puzzle Exchange"
           loading="lazy"
         />
@@ -54,8 +63,8 @@
     </details>
 
     <article class="poster-credit poster-credit-art reveal">
-      <img
-        src="/images/exoplanet_greetings.jpg"
+      <Image
+        src={exoplanetGreetingsImage}
         alt="Exoplanet Greetings"
         loading="lazy"
       />

@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { familyMembers } from '../content/family';
 ---
 
@@ -8,7 +9,7 @@ import { familyMembers } from '../content/family';
       <article class="family-card reveal" role="listitem">
         <div class="family-card-body">
           <h3>{member.name}</h3>
-          <img
+          <Image
             src={member.image}
             alt={`Profile icon for ${member.name}`}
             loading="lazy"

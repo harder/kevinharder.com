@@ -1,14 +1,17 @@
-export type CareerRole = {
-  company: string;
-  companyUrl?: string;
-  companyUrlTitle?: string;
-  title: string;
-  timeframe: string;
-  logos: string[];
-  summary: string;
-  highlights: string[];
-  openByDefault?: boolean;
-};
+import {
+  accessGroupLogo,
+  dellLogo,
+  ebayLogo,
+  indeedLogo,
+  instructureLogo,
+  kiboLogo,
+  mozuLogo,
+  perficientLogo,
+  squareLogo,
+  tcgplayerLogo,
+  telligentLogo
+} from '../assets/images';
+import type { CareerRole } from '../types/content';
 
 export const careerRoles: CareerRole[] = [
   {
@@ -17,7 +20,7 @@ export const careerRoles: CareerRole[] = [
     companyUrlTitle: 'ebay.com',
     title: 'Principal Software Engineer',
     timeframe: 'April 2024 - Present',
-    logos: ['/images/ebay_logo.jpg', '/images/tcgplayer_logo.jpg'],
+    logos: [ebayLogo, tcgplayerLogo],
     summary:
       'Building a next generation trading card game (TCG) focused inventory management system for sellers.',
     highlights: [
@@ -33,7 +36,7 @@ export const careerRoles: CareerRole[] = [
     companyUrlTitle: 'instructure.com',
     title: 'Engineering Architect',
     timeframe: 'September 2022 - April 2024',
-    logos: ['/images/instructure_logo.jpg'],
+    logos: [instructureLogo],
     summary:
       'Led a team of architects and principal engineers for Canvas LMS and related ed-tech products.',
     highlights: [
@@ -48,7 +51,7 @@ export const careerRoles: CareerRole[] = [
     companyUrlTitle: 'squareup.com',
     title: 'Software Engineering Manager',
     timeframe: 'July 2021 - September 2022',
-    logos: ['/images/square_logo.jpg'],
+    logos: [squareLogo],
     summary:
       'Led the Orders Aggregation team, building solutions to empower sellers to succeed by helping them throughout their entire business lifecycle.',
     highlights: [
@@ -64,7 +67,7 @@ export const careerRoles: CareerRole[] = [
     companyUrlTitle: 'indeed.com',
     title: 'Engineering Manager',
     timeframe: 'May 2017 - July 2021',
-    logos: ['/images/indeed_logo.jpg'],
+    logos: [indeedLogo],
     summary:
       'Managed and scaled multiple teams that focused on hiring and job-seeker products.',
     highlights: [
@@ -79,7 +82,7 @@ export const careerRoles: CareerRole[] = [
     companyUrlTitle: 'kibocommerce.com',
     title: 'Engineering Manager',
     timeframe: 'October 2016 - May 2017',
-    logos: ['/images/kibo_logo.jpg'],
+    logos: [kiboLogo],
     summary:
       'Led the Kibo eCommerce platform development team after acquisition of Mozu.',
     highlights: [
@@ -93,7 +96,7 @@ export const careerRoles: CareerRole[] = [
     companyUrlTitle: 'mozu.com',
     title: 'Principal Software Engineer',
     timeframe: 'September 2012 - October 2016',
-    logos: ['/images/mozu_logo.jpg'],
+    logos: [mozuLogo],
     summary:
       'Built search, messaging, event bus, and core catalog systems for a modern SaaS commerce platform.',
     highlights: [
@@ -108,7 +111,7 @@ export const careerRoles: CareerRole[] = [
     companyUrlTitle: 'perficient.com',
     title: 'Technical Architect',
     timeframe: 'September 2011 - September 2012',
-    logos: ['/images/perficient_logo.jpg'],
+    logos: [perficientLogo],
     summary:
       'Consulted on multiple Dell initiatives with architecture and implementation support.',
     highlights: [
@@ -123,7 +126,7 @@ export const careerRoles: CareerRole[] = [
     companyUrlTitle: 'dell.com',
     title: 'Lead Software Engineer',
     timeframe: 'April 2010 - September 2011',
-    logos: ['/images/dell_logo.jpg'],
+    logos: [dellLogo],
     summary:
       'Led the eDell search team and built a new search platform for Dell.com.',
     highlights: [
@@ -138,7 +141,7 @@ export const careerRoles: CareerRole[] = [
     companyUrlTitle: 'telligent.com',
     title: 'Software Development Engineer',
     timeframe: 'June 2005 - April 2010',
-    logos: ['/images/telligent_logo.jpg'],
+    logos: [telligentLogo],
     summary:
       'Developed enterprise collaboration software including Community Server and Graffiti CMS. Acquired by Verint.',
     highlights: [
@@ -153,7 +156,7 @@ export const careerRoles: CareerRole[] = [
     companyUrlTitle: 'accessgroup.org',
     title: 'Programmer / Analyst',
     timeframe: 'February 2001 - May 2005',
-    logos: ['/images/accessgroup_logo.jpg'],
+    logos: [accessGroupLogo],
     summary: 'Modernized a student loan disbursement and funding system.',
     highlights: [
       'Designed and developed student loan origination, management, and disbursement systems system that eliminated many manual tasks and greatly decreased processing time.'

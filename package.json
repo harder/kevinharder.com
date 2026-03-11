@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=20.0.0"
+    "node": "^20.19.1 || >=22.12.0"
   },
   "scripts": {
     "dev": "astro dev",
@@ -15,14 +15,17 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
-    "astro": "^5.0.0",
-    "@astrojs/preact": "^4.0.0",
-    "@astrojs/sitemap": "^3.0.0",
-    "preact": "^10.0.0"
+    "astro": "^6.0.2",
+    "@astrojs/sitemap": "^3.7.1"
   },
   "devDependencies": {
-    "prettier": "^3.0.0",
-    "prettier-plugin-astro": "^0.14.0",
-    "typescript": "^5.0.0"
+    "@astrojs/check": "^0.9.7",
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "rollup": "^4.59.0",
+    "svgo": "^4.0.1"
   }
 }
