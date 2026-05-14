@@ -33,7 +33,7 @@ export const familyMembers: FamilyMember[] = [
   {
     name: 'Cadence',
     blurb:
-      'High School senior and Color Guard star. Future occupational therapist.',
+      'High School senior and Color Guard star, attending Duquesne University next year. Future occupational therapist.',
     image: cadenceImage
   },
   {
@@ -44,7 +44,8 @@ export const familyMembers: FamilyMember[] = [
   {
     name: 'Finn',
     blurb: 'Twin brother and smart creative first grader.',
-    image: finnImage
+    image: finnImage,
+    link: 'https://finnharder.com/'
   },
   {
     name: 'Axton',
