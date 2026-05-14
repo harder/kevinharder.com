@@ -9,15 +9,30 @@ import { familyMembers } from '../content/family';
       <article class="family-card reveal" role="listitem">
         <div class="family-card-body">
           <h3>{member.name}</h3>
-          <Image
-            src={member.image}
-            alt={`Profile icon for ${member.name}`}
-            loading="lazy"
-          />
+          {member.link ? (
+            <a
+              href={member.link}
+              target="_blank"
+              rel="noopener"
+              aria-label={`Visit ${member.name}`}
+            >
+              <Image
+                src={member.image}
+                alt={member.name}
+                loading="lazy"
+              />
+            </a>
+          ) : (
+            <Image
+              src={member.image}
+              alt={member.name}
+              loading="lazy"
+            />
+          )}
           <p>{member.blurb}</p>
           {member.link && (
             <p class="family-link">
-              <a href={member.link} target="_blank" rel="noopener noreferrer">
+              <a href={member.link} target="_blank" rel="noopener">
                 Visit site
               </a>
             </p>
