@@ -50,6 +50,7 @@ export const familyMembers: FamilyMember[] = [
   {
     name: 'Axton',
     blurb: 'Twin brother and smart creative first grader.',
-    image: axtonImage
+    image: axtonImage,
+    link: 'https://axtonharder.com/'
   }
 ];
