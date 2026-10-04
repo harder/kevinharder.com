@@ -15,7 +15,7 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
-    "astro": "^6.0.2",
+    "astro": "^7.2.8",
     "@astrojs/sitemap": "^3.7.1"
   },
   "devDependencies": {
@@ -26,6 +26,6 @@
   },
   "overrides": {
     "rollup": "^4.59.0",
-    "svgo": "^4.0.1"
+    "svgo": "^4.1.0"
   }
 }
