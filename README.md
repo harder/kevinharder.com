@@ -1,10 +1,10 @@
 # kevinharder.com
 
-Personal site built with Astro 6 as a static site.
+Personal site built with Astro 7 as a static site.
 
 ## Stack
 
-- Astro 6
+- Astro 7
 - TypeScript
 - `@astrojs/sitemap`
 - Astro Fonts API for self-hosted Google fonts
@@ -14,8 +14,8 @@ There are currently no UI framework integrations or hydrated islands in the app.
 
 ## Requirements
 
-- Node `^20.19.1 || >=22.12.0`
-- npm 9+
+- Node `>=22.23.4`
+- npm 9.6.5+
 
 ## Scripts
 
@@ -33,15 +33,20 @@ There are currently no UI framework integrations or hydrated islands in the app.
 - [`src/content/`](./src/content) contains typed in-repo data modules for profile, family, career, and section navigation.
 - [`src/assets/images/`](./src/assets/images) contains images that should be processed by Astro's asset pipeline.
 - [`public/`](./public) is reserved for passthrough assets that should keep stable URLs, such as favicons, verification files, social icons, and the hero background image.
-- [`src/scripts/site-enhancements.ts`](./src/scripts/site-enhancements.ts) is the only client-side script entrypoint and is bundled by Astro via `?url`.
+- [`src/scripts/site-enhancements.ts`](./src/scripts/site-enhancements.ts) is the only client-side script entrypoint and is bundled by Astro.
 - [`src/styles/global.css`](./src/styles/global.css) contains the site-wide visual system and layout styling.
 
-## Astro 6 Notes
+## Astro 7 Notes
 
 - Fonts are configured in [`astro.config.mjs`](./astro.config.mjs) with the Astro Fonts API, so the site no longer depends on runtime requests to `fonts.googleapis.com`.
 - Content images are imported from `src/assets/images` and rendered with `astro:assets`, which gives hashed URLs, dimensions, and optimized output during build.
 - The old unused Preact island code was removed during the Astro 6 upgrade. If interactivity is added later, prefer plain Astro or vanilla client scripts unless a framework dependency is clearly justified.
-- `package.json` includes `overrides` for patched `rollup` and `svgo` versions to keep production audit results clean.
+- `package.json` retains an `svgo` override. Vite 8 uses Rolldown, so the old Rollup override is no longer needed.
+- `compressHTML: true` preserves HTML whitespace around inline links; Astro 7 otherwise defaults to JSX whitespace rules.
+- Astro 7 requires Node 22.23.4 or newer. CI and deployment builds use Node 24.
+- Astro 7’s Rust compiler, queued rendering, and Vite 8 build pipeline apply automatically.
+- Use `npm run preview -- --background`, then `npm run preview -- status` / `logs` / `stop` to manage a production preview. The same commands are available for `dev`.
+- Route caching, advanced server routing, deferred Markdown rendering, and incremental builds are available, but this single-page static site does not currently need them.
 
 ## Verification
 

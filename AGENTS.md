@@ -2,7 +2,7 @@
 
 ## Current Stack
 
-- Astro 6 static site
+- Astro 7 static site
 - TypeScript
 - No React, Preact, Vue, or other UI framework integration
 - No active Astro islands
@@ -16,7 +16,7 @@
 - Treat [`src/content/`](./src/content) as the source of truth for profile and page data. Keep it typed and in sync with [`src/types/content.ts`](./src/types/content.ts) when data structures change.
 - Keep metadata, structured data, and global shell concerns in [`src/layouts/BaseLayout.astro`](./src/layouts/BaseLayout.astro).
 
-## Astro 6 Specifics
+## Astro 7 Specifics
 
 - Fonts are configured with the Astro Fonts API in [`astro.config.mjs`](./astro.config.mjs).
 - The site relies on Astro's asset pipeline for optimized image output during build.
