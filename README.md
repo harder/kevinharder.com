@@ -1,59 +1,87 @@
 # kevinharder.com
 
-Personal site built with Astro 7 as a static site.
-
-## Stack
-
-- Astro 7
-- TypeScript
-- `@astrojs/sitemap`
-- Astro Fonts API for self-hosted Google fonts
-- `astro:assets` for optimized content images
-
-There are currently no UI framework integrations or hydrated islands in the app. The site is mostly static HTML/CSS with one bundled client script for theme controls, scroll spy, reveal effects, copy-to-clipboard, and the starfield canvas.
+Personal website built with Astro 7 and TypeScript. The site produces static HTML and CSS, with one bundled browser script for theme controls, scroll spy, reveal effects, copy-to-clipboard, and the starfield canvas. It has no UI framework integrations or hydrated islands.
 
 ## Requirements
 
 - Node `>=22.23.4`
 - npm 9.6.5+
 
+CI and Azure deployment builds use Node 24.
+
+## Local development
+
+```sh
+npm ci
+npm run dev
+```
+
+The development server reloads the page as you edit source files. Open the URL printed in the terminal.
+
+## Production preview
+
+Build the site, then serve the generated `dist/` directory locally:
+
+```sh
+npm run build
+npm run preview
+```
+
+Preview serves the built files. Rebuild after source changes to see them in preview. It does not publish the site.
+
+To keep your terminal available, start preview as a background process:
+
+```sh
+npm run preview -- --background
+```
+
+The command prints the server URL and returns control to your terminal. The server continues running until you stop it. Run these commands from the same project directory to manage it:
+
+| Command                            | Purpose                                                |
+| ---------------------------------- | ------------------------------------------------------ |
+| `npm run preview -- status`        | Show whether the server is running and its URL.        |
+| `npm run preview -- logs`          | Print the server logs.                                 |
+| `npm run preview -- logs --follow` | Stream new log output; press Ctrl+C to stop following. |
+| `npm run preview -- stop`          | Stop the background preview server.                    |
+
+The `--` tells npm to pass the remaining arguments to Astro. The same background flag and management commands work with `npm run dev` for a development server that watches source changes.
+
+See the [Astro CLI reference](https://docs.astro.build/en/reference/cli-reference/) for command details.
+
 ## Scripts
 
-- `npm run dev` - start local development server
-- `npm run build` - produce static output in `dist/`
-- `npm run preview` - preview production build locally
-- `npm run check` - run Astro and TypeScript checks
-- `npm run format` - format project files
-- `npm run format:check` - verify formatting
+| Command                | Purpose                                 |
+| ---------------------- | --------------------------------------- |
+| `npm run dev`          | Start the development server.           |
+| `npm run build`        | Generate the static site in `dist/`.    |
+| `npm run preview`      | Serve the production build locally.     |
+| `npm run check`        | Run Astro and TypeScript checks.        |
+| `npm run format`       | Format project files with Prettier.     |
+| `npm run format:check` | Check formatting without editing files. |
 
 ## Architecture
 
-- [`src/pages/index.astro`](./src/pages/index.astro) is the only page entrypoint.
-- [`src/layouts/BaseLayout.astro`](./src/layouts/BaseLayout.astro) owns metadata, JSON-LD, GTM, navigation, and the bundled site enhancement script.
-- [`src/content/`](./src/content) contains typed in-repo data modules for profile, family, career, and section navigation.
-- [`src/assets/images/`](./src/assets/images) contains images that should be processed by Astro's asset pipeline.
-- [`public/`](./public) is reserved for passthrough assets that should keep stable URLs, such as favicons, verification files, social icons, and the hero background image.
-- [`src/scripts/site-enhancements.ts`](./src/scripts/site-enhancements.ts) is the only client-side script entrypoint and is bundled by Astro.
-- [`src/styles/global.css`](./src/styles/global.css) contains the site-wide visual system and layout styling.
+- [`src/pages/index.astro`](./src/pages/index.astro) is the single page entrypoint.
+- [`src/layouts/BaseLayout.astro`](./src/layouts/BaseLayout.astro) owns metadata, JSON-LD, Google Tag Manager, navigation, and the browser script import.
+- [`src/content/`](./src/content) contains profile, family, career, and navigation data, typed with [`src/types/content.ts`](./src/types/content.ts).
+- [`src/assets/images/`](./src/assets/images) contains content images imported and optimized through `astro:assets`.
+- [`public/`](./public) contains passthrough assets with stable URLs, including favicons, verification files, social icons, and the hero background image.
+- [`src/scripts/site-enhancements.ts`](./src/scripts/site-enhancements.ts) contains shared browser behavior and is bundled by Astro.
+- [`src/styles/global.css`](./src/styles/global.css) defines the visual system and layout styles.
+- [`astro.config.mjs`](./astro.config.mjs) configures static output, the sitemap integration, the Fonts API, and `compressHTML: true` to preserve HTML whitespace around inline links.
 
-## Astro 7 Notes
-
-- Fonts are configured in [`astro.config.mjs`](./astro.config.mjs) with the Astro Fonts API, so the site no longer depends on runtime requests to `fonts.googleapis.com`.
-- Content images are imported from `src/assets/images` and rendered with `astro:assets`, which gives hashed URLs, dimensions, and optimized output during build.
-- The old unused Preact island code was removed during the Astro 6 upgrade. If interactivity is added later, prefer plain Astro or vanilla client scripts unless a framework dependency is clearly justified.
-- `package.json` retains an `svgo` override. Vite 8 uses Rolldown, so the old Rollup override is no longer needed.
-- `compressHTML: true` preserves HTML whitespace around inline links; Astro 7 otherwise defaults to JSX whitespace rules.
-- Astro 7 requires Node 22.23.4 or newer. CI and deployment builds use Node 24.
-- Astro 7’s Rust compiler, queued rendering, and Vite 8 build pipeline apply automatically.
-- Use `npm run preview -- --background`, then `npm run preview -- status` / `logs` / `stop` to manage a production preview. The same commands are available for `dev`.
-- Route caching, advanced server routing, deferred Markdown rendering, and incremental builds are available, but this single-page static site does not currently need them.
-
-## Verification
+## Validation
 
 Before shipping changes, run:
 
-- `npm run check`
-- `npm run build`
-- `npm run preview`
+```sh
+npm run check
+npm run build
+npm audit
+```
 
-`npm audit --omit=dev` should be clean. A full `npm audit` may still report dev-only issues through editor and language-server tooling.
+Use `npm run preview` for a browser smoke test when changing rendering, metadata, or assets.
+
+## Deployment
+
+GitHub Actions validates and builds the site on pull requests and pushes to `main`. The Azure Static Web Apps workflow uploads `dist/` using the repository's deployment-token secret.

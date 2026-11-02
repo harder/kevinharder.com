@@ -16,11 +16,11 @@
 - Treat [`src/content/`](./src/content) as the source of truth for profile and page data. Keep it typed and in sync with [`src/types/content.ts`](./src/types/content.ts) when data structures change.
 - Keep metadata, structured data, and global shell concerns in [`src/layouts/BaseLayout.astro`](./src/layouts/BaseLayout.astro).
 
-## Astro 7 Specifics
+## Build Configuration
 
 - Fonts are configured with the Astro Fonts API in [`astro.config.mjs`](./astro.config.mjs).
 - The site relies on Astro's asset pipeline for optimized image output during build.
-- Avoid reintroducing unused integration packages. The Astro 6 upgrade removed dead Preact code and the repo should stay lean.
+- Keep integration packages limited to those used by the site.
 
 ## Validation
 

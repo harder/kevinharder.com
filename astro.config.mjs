@@ -33,7 +33,7 @@ export default defineConfig({
       fallbacks: ['monospace']
     }
   ],
-  // Preserve spaces around inline links across the Astro 7 compiler upgrade.
+  // Preserve HTML whitespace around inline links.
   compressHTML: true,
   output: 'static'
 });
